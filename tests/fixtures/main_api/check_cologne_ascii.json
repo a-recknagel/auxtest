@@ -1,0 +1,8 @@
+{
+  "query": "/check?city=Köln",
+  "response":
+  {
+    "check": false,
+    "criteria": { "naming": false }
+  }
+}
