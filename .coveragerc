@@ -1,0 +1,13 @@
+[run]
+branch = True
+source =
+    auxtest
+    tests/
+
+[paths]
+source = src/auxtest
+
+[report]
+ignore_errors = True
+precision = 2
+fail_under = 75

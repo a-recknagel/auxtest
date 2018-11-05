@@ -1,0 +1,10 @@
+pytest
+mypy
+pep8-naming
+flake8
+flake8-docstrings
+flake8-import-order
+flake8-colors
+coverage
+sphinx
+wheel

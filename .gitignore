@@ -1,0 +1,21 @@
+# pycharm files
+.idea/
+
+# virtual environments
+env/
+
+# caches and bin files
+__pycache__
+.coverage
+.pytest_cache
+.mypy_cache
+*.py[cod]
+
+# Packaging
+wheel/
+*.eggs/
+*.egg-info/
+AUTHORS
+ChangeLog
+build/
+dist/
