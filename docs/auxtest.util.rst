@@ -4,10 +4,10 @@ auxtest.util package
 Submodules
 ----------
 
-auxtest.util.logging module
----------------------------
+auxtest.util.log\_setup module
+------------------------------
 
-.. automodule:: auxtest.util.logging
+.. automodule:: auxtest.util.log_setup
     :members:
     :undoc-members:
     :show-inheritance:

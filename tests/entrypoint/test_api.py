@@ -16,7 +16,7 @@ for path in Path(TEST_DIR / 'fixtures' / 'main_api').iterdir():
 
 def test_route_to_status(entrypoint):
     response = entrypoint.get('/').json
-    assert response['msg'] == f"Service is running, version: ({VERSION})."
+    assert response['msg'] == f"Service is running, version: {VERSION}."
 
 
 @pytest.mark.parametrize('query, response', fixtures)

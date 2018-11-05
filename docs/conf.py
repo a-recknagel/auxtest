@@ -4,15 +4,15 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../src/'))
 
-import auxtest
+from auxtest.settings import VERSION
 
 
 # -- Project information -----------------------------------------------------
 project = 'auxtest'
 copyright = "2018, Arne Recknagel"
 author = 'Arne Recknagel'
-version = auxtest.__version__
-release = auxtest.__version__
+version = VERSION
+release = VERSION
 
 
 # -- General configuration ---------------------------------------------------

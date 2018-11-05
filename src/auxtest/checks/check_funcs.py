@@ -6,8 +6,8 @@ nail this app to only support keyword arguments that conform to python's
 function naming rules, so it might be a bad call to nail this down just yet.
 
 Notes:
-    * Might extend the call api with the 'country' kwarg to disambiguate in case
-    there are many cities with the submitted name.
+    * Might extend the call api with the 'country' kwarg to disambiguate in
+      case there are many cities with the submitted name.
 
 """
 

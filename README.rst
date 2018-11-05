@@ -42,7 +42,7 @@ You'll need docker in order to build and run a container, and the auxtest-wheel 
 
 .. code-block:: bash
 
-  auxtest$ docker build auxtest:latest .
+  auxtest$ docker build . -t auxtest:latest
   auxtest$ docker run -p 5000:5000 auxtest:latest
 
 With the current settings, the dev server will run, which will also tell you where it can be reached.

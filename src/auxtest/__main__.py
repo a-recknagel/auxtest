@@ -1,7 +1,7 @@
 from logging import getLogger
 import sys
 
-from auxtest.util.logging import configure_logger
+from auxtest.util.log_setup import configure_logger
 
 
 configure_logger()

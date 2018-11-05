@@ -4,11 +4,11 @@ All routes (and nothing else) are defined here.
 
 Notes:
     * Doesn't support authentication yet, so not safe for usage outside of
-    intranets.
-    * The current __main__.py starts the dev server, which isn't stable enough
-    for production purposes.
-    * Discuss if acceptance criteria of retuning json instead of error code is
-    ok.
+      intranets.
+    * The current __main__.py starts the dev server, which isn't stable
+      enough for production purposes.
+    * Discuss if acceptance criteria of retuning json instead of error code
+      is ok.
 
 """
 from logging import getLogger
