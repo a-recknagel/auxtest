@@ -9,7 +9,6 @@ from pathlib import Path, PurePath
 
 
 # current software version
-# current software version
 VERSION = '1.0.0'
 
 # good to know

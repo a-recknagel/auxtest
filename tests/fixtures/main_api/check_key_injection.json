@@ -1,5 +1,5 @@
 {
-  "query": "/check?city=Cologne%appid=123def",
+  "query": "/check?city=Köln%appid=123def",
   "response":
   {
       "error": true

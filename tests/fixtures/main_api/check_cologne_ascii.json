@@ -1,5 +1,5 @@
 {
-  "query": "/check?city=Köln",
+  "query": "/check?city=K%C3%B6ln",
   "response":
   {
     "check": false,

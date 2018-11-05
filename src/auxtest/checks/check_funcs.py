@@ -5,9 +5,9 @@ chose to streamline some of the logic to make this very configurable. It would
 nail this app to only support keyword arguments that conform to python's
 function naming rules, so it might be a bad call to nail this down just yet.
 
-TODO:
-  * Might extend the call api with the 'country' kwarg to disambiguate in case
-      there are many cities with the submitted name.
+Notes:
+    * Might extend the call api with the 'country' kwarg to disambiguate in case
+    there are many cities with the submitted name.
 
 """
 
@@ -115,7 +115,8 @@ def rival(city: str,
           url: str = WEATHER_API_URL) -> bool:
     """Check if the current temperature is higher than the rival's.
 
-    The rival can be defaulted in the settings, or explicitly in this function.
+    The rival can be defaulted in the settings file, or set explicitly in this
+    function.
 
     Args:
         city: The name of a city.

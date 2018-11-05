@@ -2,12 +2,13 @@
 
 All routes (and nothing else) are defined here.
 
-TODO:
-  * Doesn't support authentication yet, so not safe for usage outside of
-      intranets.
-  * The current __main__.py starts the dev server, which isn't stable enough
-      for production purposes.
-  * Discuss if acceptance criteria of retuning json instead of error code is ok.
+Notes:
+    * Doesn't support authentication yet, so not safe for usage outside of
+    intranets.
+    * The current __main__.py starts the dev server, which isn't stable enough
+    for production purposes.
+    * Discuss if acceptance criteria of retuning json instead of error code is
+    ok.
 
 """
 from logging import getLogger
@@ -31,7 +32,7 @@ def route_to_status() -> str:
 
     """
     log.debug("Status checked.")
-    return jsonify({'msg': f"Service is running, version: ({VERSION})."})
+    return jsonify({'msg': f"Service is running, version: {VERSION}."})
 
 
 @app.route('/check', methods=['GET'])
@@ -55,7 +56,7 @@ def route_to_city_check() -> Response:
         Response: Flask.Response with the result rendered as a json.
 
     """
-    log.debug("Received check request.")
+    log.debug("Received check-request.")
 
     # checking if city name was set
     if CITY_KWARG not in request.args or not request.args[CITY_KWARG]:
@@ -66,7 +67,7 @@ def route_to_city_check() -> Response:
     else:
         city = request.args[CITY_KWARG]
 
-    # call check functions
+    log.debug("Calling check functions...")
     try:
         check_naming = naming(city)
         check_daytemp = daytemp(city)
