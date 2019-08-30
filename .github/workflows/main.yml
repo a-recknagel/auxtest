@@ -5,6 +5,8 @@ on: [push]
 jobs:
   dummy:
     runs-on: ubuntu-latest
+    container:
+      image: python:3.7-alpine
     steps:
       - name: hello world
         run: echo "hello world"
