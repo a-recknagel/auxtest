@@ -1,9 +1,9 @@
-FROM python:3.6-alpine
+FROM python:3.7-alpine
 
 LABEL maintainer="Arne Recknagel"
 
-COPY wheel/* wheel/
+COPY wheelhouse/* wheelhouse/
 
-RUN pip install wheel/*
+RUN pip install wheelhouse/*
 
-CMD [ "python", "-m", "auxtest", "serve" ]
+CMD [ "auxtest", "run", "--host", "0.0.0.0" ]

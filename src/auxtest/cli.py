@@ -31,14 +31,14 @@ def cli(loglevel):
 
 
 @cli.command()
-@click.option("--host", type=str, default="0.0.0.0", help="Target host address.")
+@click.option("--host", type=str, default="127.0.0.1", help="Target host address.")
 @click.option("--debug", is_flag=True, help="Sets debug mode.")
 def run(host, debug):
     """Run a flask dev server.
 
     Flask brings a dev server along, which can be used to test and debug
     the implemented functionality. This command lets you run it, optionally
-    providing a custom host address over the default or a flag to enable
+    providing a custom host address different from localhost or a flag to enable
     debug mode.
     """
     api.app.run(host=host, debug=debug)

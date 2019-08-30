@@ -43,21 +43,26 @@ def route_to_city_check() -> Response:
     individual and cumulative results. The cumulative logical connector is an
     and operation of all checks. An example result could be:
 
-    >>> {
-    ...     'check': False,
-    ...     'criteria': {'naming': True, 'daytemp': False, 'rival': True}
-    ... }
+    >>> "/check?city=London"
+    {
+        "check":false,
+        "criteria":
+        {
+            "check_rival":false,
+            "daytemp":true,
+            "naming":false
+        }
+    }
 
     And in case of an error:
 
-    >>> {'error': True}
+    >>> "/check?stadt=London"
+    {'error':true}
 
     Returns:
-        Response: Flask.Response with the result rendered as a json.
+        Flask.Response: With the result transformed into a json.
 
     """
-    log.debug("Received check-request.")
-
     # checking if city name was set
     if CITY_KWARG not in request.args or not request.args[CITY_KWARG]:
         log.info(f"Aborting, no city specified in kwargs: " f"'{ {**request.args} }'")

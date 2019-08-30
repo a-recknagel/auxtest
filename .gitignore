@@ -1,7 +1,7 @@
 # binaries
 build
 dist
-wheels
+wheelhouse
 public
 
 # caches and tool artifacts

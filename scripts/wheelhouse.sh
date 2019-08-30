@@ -18,8 +18,8 @@ COPY pyproject.toml .
 RUN pip install poetry==1.0.0a4 && \
     poetry build -f wheel && \
     poetry export -f requirements.txt && \
-    pip wheel -w wheels -r requirements.txt && \
-    mv dist/* wheels
+    pip wheel -w wheelhouse -r requirements.txt && \
+    mv dist/* wheelhouse
 EOF
 
 # build image, run container, and copy wheelhouse to project root on host
@@ -28,6 +28,6 @@ docker build -f ${TMP}/Dockerfile -t 'wheelhouse_builder' ${PROJECT_DIR}
 echo "Running container..."
 docker run --cidfile ${TMP}/wheelhouse.cid 'wheelhouse_builder'
 echo "Cleaning up former wheelhouse and copying over new one from container..."
-rm -fr ${PROJECT_DIR}/wheels
-docker cp $(cat ${TMP}/wheelhouse.cid):/wheels ${PROJECT_DIR}/wheels
+rm -fr ${PROJECT_DIR}/wheelhouse
+docker cp $(cat ${TMP}/wheelhouse.cid):/wheelhouse ${PROJECT_DIR}/wheelhouse
 echo "Done."
