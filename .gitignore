@@ -1,21 +1,18 @@
-# pycharm files
-.idea/
+# binaries
+build
+dist
+wheels
+public
 
-# virtual environments
-env/
-
-# caches and bin files
-__pycache__
-.coverage
-.pytest_cache
+# caches and tool artifacts
+docs/autodoc
 .mypy_cache
+.pytest_cache
+.coverage
+pip-wheel-metadata
 *.py[cod]
+*.egg-info
 
-# Packaging
-wheel/
-*.eggs/
-*.egg-info/
-AUTHORS
-ChangeLog
-build/
-dist/
+# dev stuff
+.idea
+env

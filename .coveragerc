@@ -1,13 +1,13 @@
 [run]
 branch = True
-source =
-    auxtest
-    tests/
+source = auxtest
+omit =
+  */__init__.py
+  */cli.py
 
 [paths]
-source = src/auxtest
+source = src
 
 [report]
-ignore_errors = True
-precision = 2
 fail_under = 75
+show_missing = True
