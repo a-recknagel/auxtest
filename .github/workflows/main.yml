@@ -3,7 +3,14 @@ name: Cabbage
 on: [push]
 
 jobs:
+  dummy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello world
+        run: echo "hello world"
+
   build:
+    needs: dummy
     runs-on: ubuntu-latest
     container:
       image: python:3.7-alpine
