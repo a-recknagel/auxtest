@@ -11,13 +11,17 @@ jobs:
         - wheelhouse:/wheelhouse
     steps:
       - name: Install build dependencies
-        run: pip install poetry==1.0.0a4  # FIXME: need pre-release for export
+        run:
+          shell: bash
+          - pip install poetry==1.0.0a4  # FIXME: need pre-release for export
       - name: Make wheelhouse
-        run: |
-          poetry build -f wheel
-          mv dist wheelhouse
-          poetry export -f requirements.txt
-          pip wheel -w wheelhouse -r requirements.txt
+        run:
+          shell: bash
+          |
+            poetry build -f wheel
+            mv dist wheelhouse
+            poetry export -f requirements.txt
+            pip wheel -w wheelhouse -r requirements.txt
 
   test:
     needs: build
@@ -28,6 +32,10 @@ jobs:
         - wheelhouse:/wheelhouse
     steps:
       - name: Install test dependencies
-        run: pip install pytest pytest-sugar wheelhouse/*
+        run:
+          shell: bash
+          - pip install pytest pytest-sugar wheelhouse/*
       - name: Run tests
-        run: pytest
+        run:
+          shell: bash
+          - pytest
