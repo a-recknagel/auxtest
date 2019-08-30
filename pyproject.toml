@@ -4,12 +4,14 @@ version = "0.1.0"
 description = "Simple web API test package that I use to try out github actions."
 authors = ["Arne Recknagel <arne.recknagel@hotmail.com>"]
 
+[tool.poetry.scripts]
+auxtest = "auxtest.cli:cli"
+
 [tool.poetry.dependencies]
 python = "^3.7"
 flask = "^1.1"
 requests = "^2.22"
 click = "^7.0"
-
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
@@ -21,6 +23,7 @@ bandit = "^1.5"
 sphinx = "^2.0"
 sphinx-click = "^2.1"
 black = {version = "^18.3-alpha.0",allows-prereleases = true}
+Pallets-Sphinx-Themes = "^1.2"
 
 [tool.black]
 target-version = ["py37"]

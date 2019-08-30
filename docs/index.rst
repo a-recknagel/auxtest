@@ -1,13 +1,15 @@
-Welcome to auxtest's documentation!
-===================================
+auxtest documentation
+=====================
+
+
+* :ref:`genindex`
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 4
+
+   cli
+   autodoc/auxtest
 
 
-Indices and tables
-==================
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. include:: ../README.rst
+   :start-after: header-end
