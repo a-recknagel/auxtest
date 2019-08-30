@@ -21,10 +21,10 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-      container:
-        image: python:3.7-alpine
-        volumes:
-          - wheelhouse:/wheelhouse
+    container:
+      image: python:3.7-alpine
+      volumes:
+        - wheelhouse:/wheelhouse
     steps:
       - name: install test dependencies
         run: pip install pytest pytest-sugar wheelhouse/*
