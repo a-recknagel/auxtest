@@ -10,9 +10,9 @@ jobs:
       volumes:
         - wheelhouse:/wheelhouse
     steps:
-      - name: install build dependencies
+      - name: Install build dependencies
         run: pip install poetry==1.0.0a4  # FIXME: need pre-release for export
-      - name: make wheelhouse
+      - name: Make wheelhouse
         run: |
           poetry build -f wheel
           mv dist wheelhouse
@@ -20,11 +20,14 @@ jobs:
           pip wheel -w wheelhouse -r requirements.txt
 
   test:
+    needs: build
     runs-on: ubuntu-latest
     container:
       image: python:3.7-alpine
       volumes:
         - wheelhouse:/wheelhouse
     steps:
-      - name: install test dependencies
+      - name: Install test dependencies
         run: pip install pytest pytest-sugar wheelhouse/*
+      - name: Run tests
+        run: pytest
