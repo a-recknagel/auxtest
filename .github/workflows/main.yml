@@ -9,19 +9,16 @@ jobs:
       image: python:3.7-alpine
       volumes:
         - wheelhouse:/wheelhouse
+      options: --entrypoint /bin/sh
     steps:
       - name: Install build dependencies
-        run:
-          shell: bash
-          - pip install poetry==1.0.0a4  # FIXME: need pre-release for export
+        run: pip install poetry==1.0.0a4  # FIXME: need pre-release for export
       - name: Make wheelhouse
-        run:
-          shell: bash
-          |
-            poetry build -f wheel
-            mv dist wheelhouse
-            poetry export -f requirements.txt
-            pip wheel -w wheelhouse -r requirements.txt
+        run: |
+          poetry build -f wheel
+          mv dist wheelhouse
+          poetry export -f requirements.txt
+          pip wheel -w wheelhouse -r requirements.txt
 
   test:
     needs: build
@@ -30,12 +27,9 @@ jobs:
       image: python:3.7-alpine
       volumes:
         - wheelhouse:/wheelhouse
+      options: --entrypoint /bin/sh
     steps:
       - name: Install test dependencies
-        run:
-          shell: bash
-          - pip install pytest pytest-sugar wheelhouse/*
+        run: pip install pytest pytest-sugar wheelhouse/*
       - name: Run tests
-        run:
-          shell: bash
-          - pytest
+        run: pytest
