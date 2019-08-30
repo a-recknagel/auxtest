@@ -1,0 +1,30 @@
+name: Cabbage
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.7-alpine
+      volumes:
+        - wheelhouse:/wheelhouse
+    steps:
+      - name: install build dependencies
+        run: pip install poetry==1.0.0a4  # FIXME: need pre-release for export
+      - name: make wheelhouse
+        run: |
+          poetry build -f wheel
+          mv dist wheelhouse
+          poetry export -f requirements.txt
+          pip wheel -w wheelhouse -r requirements.txt
+
+  test:
+    runs-on: ubuntu-latest
+      container:
+        image: python:3.7-alpine
+        volumes:
+          - wheelhouse:/wheelhouse
+    steps:
+      - name: install test dependencies
+        run: pip install pytest pytest-sugar wheelhouse/*
