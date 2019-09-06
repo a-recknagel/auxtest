@@ -15,22 +15,31 @@ from pathlib import Path, PurePath
 log = getLogger(__name__)
 
 
-# good to know
+# useful references
+#: Project root
 ROOT_DIR = PurePath(__file__).parent.parent
+#: Current working directory
 CWD = Path.cwd()
 
 # basic weather api settings
+#: Request key
 WEATHER_API_KEY = "8ca1bf554fe26dff41d635d4e2f866ed"
+#: URL base
 WEATHER_API_URL = "http://api.openweathermap.org/data/2.5/weather"
+#: Measuring unit type
 WEATHER_API_UNITS = "metric"
 
-# day-temp configuration
+# day temperature configuration
+#: When the sun goes up
 SUNRISE = time(6, 0)
+#: When it goes down
 SUNDOWN = time(18, 0)
+#: What we assume to be daytime temperatures
 DAY_TEMP = (17, 25)
+#: What we assume to be nightime temperatures
 NIGHT_TEMP = (10, 15)
 
-# rival
+#: Default Rival
 RIVAL_CITY = "Köln"
 
 

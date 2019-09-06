@@ -20,6 +20,10 @@ extensions = [
 ]
 
 
+# -- Autodoc configuration ---------------------------------------------------
+autodoc_member_order = "bysource"
+
+
 # -- Options for HTML output -------------------------------------------------
 html_theme = "flask"  # flask jinja werkzeug click
 html_static_path = ["_static"]
